@@ -53,9 +53,10 @@ async def health_check():
     return {"status": "healthy"}
 
 
-# Routers will be added here in Phase 5
-# from app.routers import auth, nft, marketplace, mint_request
-# app.include_router(auth.router, prefix="/auth", tags=["Authentication"])
-# app.include_router(nft.router, prefix="/nft", tags=["NFT"])
-# app.include_router(marketplace.router, prefix="/marketplace", tags=["Marketplace"])
-# app.include_router(mint_request.router, prefix="/mint-request", tags=["Mint Requests"])
+# Include routers
+from app.routers import auth, nft, marketplace, mint_request
+
+app.include_router(auth.router, prefix="/auth", tags=["Authentication"])
+app.include_router(nft.router, prefix="/nft", tags=["NFT"])
+app.include_router(marketplace.router, prefix="/marketplace", tags=["Marketplace"])
+app.include_router(mint_request.router, prefix="/mint-request", tags=["Mint Requests"])
